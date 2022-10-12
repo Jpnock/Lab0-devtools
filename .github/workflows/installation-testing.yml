@@ -9,11 +9,15 @@ jobs:
         runner: [ubuntu-22.04, ubuntu-20.04, macos-12]
     runs-on: ${{ matrix.runner }}
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - name: Run installer
         env:
           GITHUB_ACTIONS_ENV: 1
+          LOCAL_DEV: 1
         run: |
-          bash <(curl -fsSL https://raw.githubusercontent.com/EIE2-IAC-Labs/Lab0-devtools/${{ github.sha }}/tools/install.sh)
+          ./tools/install.sh
 
       - name: Run toolchain test
         run: |
