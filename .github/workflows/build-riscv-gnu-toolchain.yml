@@ -5,6 +5,7 @@ on: workflow_dispatch
 jobs:
   ubuntu:
     strategy:
+      fail-fast: false
       matrix:
         runner: [ubuntu-22.04, ubuntu-20.04]
     runs-on: ${{ matrix.runner }}
