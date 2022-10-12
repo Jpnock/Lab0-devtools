@@ -9,11 +9,6 @@ jobs:
         runner: [ubuntu-22.04, ubuntu-20.04, macos-12]
     runs-on: ${{ matrix.runner }}
     steps:
-      - name: Install deps
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl
-
       - name: Run installer
         run: |
           bash <(curl -fsSL https://raw.githubusercontent.com/EIE2-IAC-Labs/Lab0-devtools/${{ github.sha }}/tools/install.sh)
