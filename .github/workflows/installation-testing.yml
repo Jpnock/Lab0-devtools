@@ -15,9 +15,9 @@ jobs:
       - name: Run installer
         env:
           GITHUB_ACTIONS_ENV: 1
-          LOCAL_DEV: 1
+          LOCALDEV: 1
         run: |
-          LOCAL_DEV=1 && ./tools/install.sh
+          ./tools/install.sh
 
       - name: Run toolchain test
         run: |
