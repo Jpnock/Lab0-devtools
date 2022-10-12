@@ -96,6 +96,7 @@ fi
 
 echo "Installing dependencies"
 if [ -z "$LOCAL_DEV" ]; then
+    echo "Running additional scripts from GitHub"
     cd "$TOOLS_FOLDER"
     "$POST_RUN_SCRIPT"
 else
