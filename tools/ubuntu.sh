@@ -17,7 +17,7 @@ if [ -z "$GITHUB_ACTIONS_ENV" ]; then
     echo "Not in GitHub Actions"
 else
     echo "GitHub Actions detected"
-    sudo apt remove -y libunwind-14-dev
+    sudo apt remove -y libunwind-14-dev || true
 fi
 
 echo "Installing dependencies.."
