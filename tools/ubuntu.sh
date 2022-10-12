@@ -12,6 +12,14 @@ echo () {
 echo "Updating apt packages... you may have to enter your password here"
 sudo apt update
 
+GITHUB_ACTIONS_ENV="${GITHUB_ACTIONS_ENV:-}"
+if [ -z "$GITHUB_ACTIONS_ENV" ]; then
+    echo "Not in GitHub Actions"
+else
+    echo "GitHub Actions detected"
+    sudo apt remove -y libunwind-14-dev
+fi
+
 echo "Installing dependencies.."
 sudo apt install -y git \
     perl \

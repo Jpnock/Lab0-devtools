@@ -10,6 +10,8 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Run installer
+        env:
+          GITHUB_ACTIONS_ENV: 1
         run: |
           bash <(curl -fsSL https://raw.githubusercontent.com/EIE2-IAC-Labs/Lab0-devtools/${{ github.sha }}/tools/install.sh)
 
